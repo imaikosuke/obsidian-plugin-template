@@ -36,11 +36,8 @@ jobs:
             exit 1
           fi
 
-      - name: Lint
-        run: pnpm run lint
-
-      - name: Build plugin
-        run: pnpm run build
+      - name: Check
+        run: pnpm run check
 
       - name: Ensure release artifacts exist
         shell: bash
