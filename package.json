@@ -24,7 +24,7 @@
 	"authorUrl": "https://github.com/imaikosuke",
 	"license": "MIT",
 	"devDependencies": {
-		"@eslint/js": "^9.39.1",
+		"@eslint/js": "^9.39.4",
 		"@types/node": "^22.0.0",
 		"@typescript-eslint/eslint-plugin": "^8.48.0",
 		"@typescript-eslint/parser": "^8.48.0",

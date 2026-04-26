@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@eslint/js':
-        specifier: ^9.39.1
-        version: 9.39.1
+        specifier: ^9.39.4
+        version: 9.39.4
       '@types/node':
         specifier: ^22.0.0
         version: 22.19.1
@@ -28,7 +28,7 @@ importers:
         version: 9.39.1
       eslint-plugin-obsidianmd:
         specifier: ^0.2.4
-        version: 0.2.4(@eslint/js@9.39.1)(@eslint/json@0.14.0)(@typescript-eslint/parser@8.48.0(eslint@9.39.1)(typescript@5.9.3))(eslint@9.39.1)(obsidian@1.12.3(@codemirror/state@6.5.0)(@codemirror/view@6.38.6))(typescript-eslint@8.48.0(eslint@9.39.1)(typescript@5.9.3))
+        version: 0.2.4(@eslint/js@9.39.4)(@eslint/json@0.14.0)(@typescript-eslint/parser@8.48.0(eslint@9.39.1)(typescript@5.9.3))(eslint@9.39.1)(obsidian@1.12.3(@codemirror/state@6.5.0)(@codemirror/view@6.38.6))(typescript-eslint@8.48.0(eslint@9.39.1)(typescript@5.9.3))
       obsidian:
         specifier: ^1.12.3
         version: 1.12.3(@codemirror/state@6.5.0)(@codemirror/view@6.38.6)
@@ -210,6 +210,10 @@ packages:
 
   '@eslint/js@9.39.1':
     resolution: {integrity: sha512-S26Stp4zCy88tH94QbBv3XCuzRQiZ9yXofEILmglYTh/Ug/a9/umqvgFtYBAo3Lp0nsI/5/qH1CCrbdK3AP1Tw==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/js@9.39.4':
+    resolution: {integrity: sha512-nE7DEIchvtiFTwBw4Lfbu59PG+kCofhjsKaCWzxTpt4lfRjRMqG6uMBzKXuEcyXhOHoUp9riAm7/aWYGhXZ9cw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/json@0.14.0':
@@ -1595,6 +1599,8 @@ snapshots:
 
   '@eslint/js@9.39.1': {}
 
+  '@eslint/js@9.39.4': {}
+
   '@eslint/json@0.14.0':
     dependencies:
       '@eslint/core': 0.17.0
@@ -2259,9 +2265,9 @@ snapshots:
     dependencies:
       eslint: 9.39.1
 
-  eslint-plugin-obsidianmd@0.2.4(@eslint/js@9.39.1)(@eslint/json@0.14.0)(@typescript-eslint/parser@8.48.0(eslint@9.39.1)(typescript@5.9.3))(eslint@9.39.1)(obsidian@1.12.3(@codemirror/state@6.5.0)(@codemirror/view@6.38.6))(typescript-eslint@8.48.0(eslint@9.39.1)(typescript@5.9.3)):
+  eslint-plugin-obsidianmd@0.2.4(@eslint/js@9.39.4)(@eslint/json@0.14.0)(@typescript-eslint/parser@8.48.0(eslint@9.39.1)(typescript@5.9.3))(eslint@9.39.1)(obsidian@1.12.3(@codemirror/state@6.5.0)(@codemirror/view@6.38.6))(typescript-eslint@8.48.0(eslint@9.39.1)(typescript@5.9.3)):
     dependencies:
-      '@eslint/js': 9.39.1
+      '@eslint/js': 9.39.4
       '@eslint/json': 0.14.0
       '@microsoft/eslint-plugin-sdl': 1.1.0(eslint@9.39.1)
       '@types/eslint': 9.6.1
