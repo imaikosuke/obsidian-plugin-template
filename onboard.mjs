@@ -292,6 +292,7 @@ async function applyOnboarding(opts) {
 	const packagePath = join(ROOT, "package.json");
 	const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 	const pkg = JSON.parse(await readFile(packagePath, "utf8"));
+	const previousPluginId = manifest.id;
 
 	manifest.id = pluginId;
 	manifest.name = pluginName;
@@ -308,6 +309,18 @@ async function applyOnboarding(opts) {
 
 	await writeJsonFile(manifestPath, manifest);
 	await writeJsonFile(packagePath, pkg);
+
+	const releaseWorkflowPath = join(ROOT, ".github", "workflows", "release.yml");
+	const previousZip = `${previousPluginId}.zip`;
+	const nextZip = `${pluginId}.zip`;
+	let releaseWorkflow = await readFile(releaseWorkflowPath, "utf8");
+	if (!releaseWorkflow.includes(previousZip)) {
+		throw new Error(
+			`Expected "${previousZip}" in .github/workflows/release.yml (manifest id before onboarding was "${previousPluginId}").`,
+		);
+	}
+	releaseWorkflow = releaseWorkflow.split(previousZip).join(nextZip);
+	await writeFile(releaseWorkflowPath, releaseWorkflow, "utf8");
 
 	const version = manifest.version ?? "0.0.1";
 	const readme = `# ${pluginName}
@@ -491,7 +504,9 @@ async function runInteractive() {
 			settingTabClassName,
 		});
 
-		console.log("\nWrote manifest.json, package.json, README.md, LICENSE, and TypeScript files.");
+		console.log(
+			"\nWrote manifest.json, package.json, README.md, LICENSE, TypeScript files, and .github/workflows/release.yml (zip artifact name).",
+		);
 
 		return await runCheckCommand();
 	} finally {
